@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "./App.css";
+import "./style.scss";
+import data from "./data.js";
+import Product from "./product.js";
+function App() {  
+    return (
+          <div className="main-container">
+            <h1>This is a simple cart</h1>
+            <div className="products max-width">
+             {
+                data.map((product)=>{
+                    return (
+                        <Product data = {product}/>
+                    )
+                })
+             }
+            </div>
+        </div>
+      );
+      
 }
 
 export default App;
